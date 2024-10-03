@@ -1,0 +1,21 @@
+@media (min-width: 768px) {
+    #header {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .menu {
+        list-style: none;
+        display: flex;
+        align-items: flex-end;
+        position: static;
+    } 
+
+    .menu ul {
+        display: flex;
+    }
+
+    .menu-icon {
+        display: none;
+    }
+}
