@@ -1,6 +1,14 @@
 @media (min-width: 1024px) {
-    .main{
-        background-color: green;
+    .login-content {
+        width: 50%;
+    }
+
+    .card {
+        width: 20%;
+    }
+
+    .btn-logout {
+        width: 15%;
     }
 
 } 

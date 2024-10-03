@@ -23,9 +23,28 @@
         include './includes/header.php';
         ?>
         
-        <h1>Página inicial</h1>
-
-        <button><a href="login.php?logout=sair">Sair</a></button>
+        <main class="content">
+            <!-- <h1>Página inicial</h1> -->
+            <section class="cards">
+                <div class="card">
+                    <h3>titulo</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa commodi praesentium cum quaerat, perferendis molestias doloremque itaque odit dicta provident officiis reprehenderit nisi non nemo cupiditate nihil fugit ex. Esse.</p>
+                </div>
+                <div class="card">
+                    <h3>titulo</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa commodi praesentium cum quaerat, perferendis molestias dolo</p>
+                </div>
+                <div class="card">
+                    <h3>titulo</h3>
+                    <p>Conteúdo</p>
+                </div>
+                <div class="card">
+                    <h3>titulo</h3>
+                    <p>Conteúdo</p>
+                </div>
+            </section>
+            <button class="btn-logout"><a href="login.php?logout=sair">Sair</a></button>
+        </main>
 
         <?php
         include './includes/footer.php';

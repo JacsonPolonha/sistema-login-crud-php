@@ -11,10 +11,10 @@ echo "
         </div>
         <ul class='menu'>
             <ul>
-                <li><a href='#'>Home original</a></li>
-                <li><a href='#'>Sobre</a></li>
-                <li><a href='#'>Serviços</a></li>
-                <li><a href='#'>Contato</a></li>
+                <li><a href='#'>Home</a></li>
+                <li><a href='#'>Adicionar Card</a></li>
+                <li><a href='#'>Sobre o sistema</a></li>
+                <li><a href='https://jacsonpolonha.pages.dev/' target='_blank'>Sobre o desenvolvedor</a></li>
             </ul>
         </ul>
     </div>

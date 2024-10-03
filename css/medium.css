@@ -2,7 +2,7 @@
     #header {
         display: flex;
         flex-direction: row;
-    }
+    } 
 
     .menu {
         list-style: none;
@@ -17,5 +17,22 @@
 
     .menu-icon {
         display: none;
+    }
+    /*FIM MENU*/
+
+    .login-content {
+        width: 60%;
+    }
+
+    .cards {
+        flex-direction: row;
+    }
+
+    .card {
+        width: 40%;
+    }
+
+    .btn-logout {
+        width: 20%;
     }
 }
