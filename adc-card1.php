@@ -1,5 +1,7 @@
-<?php
-require_once 'Classe.php'; // Inclui a classe de conexão com o banco de dados
+<?php 
+require_once 'Classe.php';
+session_start();
+
 $p = new Conteudos("sistema_login_crud", "localhost", "root", "");
 
 //Verifica se o formulário foi submetido
@@ -28,24 +30,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 }
 
-$titulo = "";
-$conteudo = "";
-
-// Verifica se está em modo de edição (se o id_update foi passado via GET)
+// Verifica se o ID de atualização foi passado
 if (isset($_GET['id_update'])) {
-    $id_update = addslashes($_GET['id_update']);
-    $res = $p->editar($id_update); // Busca os dados do card pelo ID
-
-    // Verifica se a busca retornou resultados
-    if ($res) {
-        $titulo = $res['titulo'];
-        $conteudo = $res['conteudo'];
-    }
+    $id_update = filter_input(INPUT_GET, 'id_update', FILTER_SANITIZE_NUMBER_INT);
+    $res = $p->editar($id_update);
 }
 ?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -55,42 +48,44 @@ if (isset($_GET['id_update'])) {
     <link rel="stylesheet" href="./css/large.css">
     <title>Adicionar Card</title>
 </head>
-
 <body>
-    <div class="container">
-        <?php
+<div class="container">
+    <?php
         include './includes/header.php';
-        ?>
-        <div class="container container-login">
+    ?>
+    <div class="container container-login">
             <main class="login-content">
+                <h1>Adicionar Card</h1>
+
                 <!-- Mensagem de feedback ao usuário -->
                 <?php if (isset($_SESSION['mensagem'])): ?>
                     <div class="mensagem">
-                        <?php
+                        <?php 
                         echo $_SESSION['mensagem'];
                         unset($_SESSION['mensagem']); // Limpa a mensagem após exibir
                         ?>
                     </div>
                 <?php endif; ?>
-
+    
                 <form action="adc-card.php<?php if(isset($res)) echo '?id_update=' . $res['id']; ?>" method="post">
-                    <!-- Campo de título, preenchido com o valor do card se estiver editando -->
-                    <input type="text" name="titulo" id="titulo" placeholder="Título" value="<?php echo htmlspecialchars($titulo); ?>">
-
-                    <!-- Campo de conteúdo, preenchido com o valor do card se estiver editando -->
-                    <textarea name="conteudo" id="conteudo" placeholder="Conteúdo"><?php echo htmlspecialchars($conteudo); ?></textarea>
-
-                    <!-- Botão de enviar, mostra 'Atualizar' se estiver em modo de edição -->
-                    <input type="submit" value="<?php echo isset($id_update) ? 'Atualizar' : 'Salvar'; ?>">
+                    <input type="text" name="titulo" id="titulo" placeholder="Digite o título" value="<?php if (isset($res)) echo htmlspecialchars($res['titulo']); ?>"
+                    >
+                    <!-- <textarea 
+                        name="conteudo" 
+                        id="conteudo" 
+                        value="<?php if (isset($res)) echo htmlspecialchars($res['conteudo']); ?>">
+                    </textarea> -->
+                    <input 
+                        name="conteudo" 
+                        id="conteudo" 
+                        value="<?php if (isset($res)) echo htmlspecialchars($res['conteudo']); ?>"
+                    >
+            
+                    <input type="submit" value="<?php echo isset($res) ? 'Atualizar' : 'Salvar'; ?>">
                 </form>
             </main>
         </div>
-
-
-
-
-
-    </div>
+</div>
+<script src="script/menu.js"></script>
 </body>
-
 </html>

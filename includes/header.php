@@ -11,8 +11,8 @@ echo "
         </div>
         <ul class='menu'>
             <ul>
-                <li><a href='#'>Home</a></li>
-                <li><a href='#'>Adicionar Card</a></li>
+                <li><a href='./index.php'>Home</a></li>
+                <li><a href='./adc-card.php'>Adicionar Card</a></li>
                 <li><a href='#'>Sobre o sistema</a></li>
                 <li><a href='https://jacsonpolonha.pages.dev/' target='_blank'>Sobre o desenvolvedor</a></li>
             </ul>
