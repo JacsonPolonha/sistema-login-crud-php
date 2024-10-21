@@ -131,6 +131,14 @@
     background-color: rgb(176, 206, 121);
     padding: 10px 15px;
     width: 90%;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.empty-card {
+    color: #fff;
 }
 
 .btn-logout {
@@ -146,6 +154,34 @@
 .btn-logout a {
     color: #fff;
     text-decoration: none;
+}
+
+.btn-excluir {
+    padding: 5px 10px;
+    border-radius: 5px;
+    background-color: rgb(226, 31, 31); 
+}
+
+.btn-excluir a, .btn-editar a{
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.4rem;
+}
+
+.btn-editar {
+    padding: 5px 10px;
+    border-radius: 5px;
+    background-color: green;
+}
+
+.about {
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    gap: 14px;
+    padding: 15px;
+    font-size: 1.3rem;
 }
 
 #footer {

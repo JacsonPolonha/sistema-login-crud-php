@@ -32,8 +32,3 @@ Substitua '$2y$10$WzqQAlDlhtUZt5JrAK1oaOlJJF3zZKmUzstlyS6K3pG1hRLy.RS8C' pelo ha
 3. Testar o login com o password_verify
 Agora, ao fazer login, o código usará password_verify() para comparar a senha digitada com o hash armazenado.
 
-# Alterações 
-
-login.php na linha 6 o parênteses do if
-config.php linhas 3 e 4
-
